@@ -1,20 +1,36 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header class="header">
+  <ion-toolbar color="primary">
+    <div class="head">
+      <h3> Notepad </h3>
+      <p>{{date}}</p>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content >
+  <div class="box">
+    <ion-list class="container">
+      <ion-card class="note-list" *ngFor="let note of notes">
+        <div class="content" (click)="onDetails(note.id)">
+            <p style="margin:0;font-size:0.6rem;">{{note.createdOn}}</p>
+            <p class="title">{{ (note.title.length>30)? (note.title | slice:0:30)+'...':(note.title)}}</p>
+        </div>
+        <div class="note-tail">
+          <ion-buttons slot="end"class="btns" >
+          <ion-button color="primary" (click)="onEdit(note.id)">
+            <ion-icon slot="icon-only" name="pencil-outline" ></ion-icon>
+          </ion-button>
+          <ion-button color="primary" (click)="onDel(note.id)">
+            <ion-icon slot="icon-only" name="trash-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </div>
+      </ion-card>
+    </ion-list>
+    <ion-fab style="position: fixed;bottom:4%;left:50%;" vertical="bottom" horizontal="center" >
+      <ion-fab-button color="primary" routerLink="/add" >
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
   </div>
 </ion-content>

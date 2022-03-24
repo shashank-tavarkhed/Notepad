@@ -1,0 +1,30 @@
+<ion-header class="header">
+  <ion-toolbar color="primary">
+    <div class="head">
+      <ion-buttons slot="end" >
+        <ion-button routerLink="/notes">
+          <ion-icon style="font-size:1.5rem;" slot="icon-only" name="chevron-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <h3>Add note</h3>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+  <form class="form" (ngSubmit)="onSubmit(formng)" #formng="ngForm">
+    <div class="form-inps">
+      <ion-item class="title">
+        <ion-label style="font-size: 1.5rem;" position="stacked">Title:</ion-label>
+        <ion-input type="text" name="title" ngModel required></ion-input>
+      </ion-item>
+      <ion-item class="content">
+        <ion-label style="font-size: 1.5rem;" position="stacked">Note:</ion-label>
+        <ion-textarea rows="20" type="text" name="content" ngModel required></ion-textarea>
+      </ion-item>
+    </div>
+    <ion-button style="position: fixed;bottom:0%;left:0%;width:100%" type="submit" expand="block">Save</ion-button>
+  </form>
+  </div>
+</ion-content>

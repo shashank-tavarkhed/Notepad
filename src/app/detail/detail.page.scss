@@ -1,0 +1,42 @@
+@mixin flexx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header{
+  height: 15%;
+  width: 100%;
+  ion-toolbar{
+    @include flexx;
+    align-items: flex-end;
+    height: 100%;
+    .head{
+      @include flexx;
+      padding: 0 1rem;
+      justify-content: space-between;
+      h3{
+        margin: 0;
+        width: fit-content;
+        // font-size: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.container{
+  .title{
+    h3{
+      margin: 0;
+      font-weight: 600;
+      word-break: break-all;
+    }
+  }
+  .content{
+    p{
+      font-size: 1rem;
+      word-break: break-all;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@mixin flexx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header{
+  height: 12%;
+  width: 100%;
+  ion-toolbar{
+    @include flexx;
+    align-items: flex-end;
+    height: 100%;
+    .head{
+      @include flexx;
+      padding: 0 1rem;
+      justify-content: space-between;
+      h3{
+        margin: 0;
+        width: fit-content;
+        // font-size: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.container{
+  height: fill;
+  .form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .form-inps{
+      margin-top: 0.5rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      .title{
+        width: 100%;
+      }
+      .content{
+        width: 95%;
+        height: fill;
+        // background-color: bisque;
+
+        ion-textarea{
+          box-sizing: border-box;
+          // height: 100%;
+        }
+      }
+    }
+  }
+}

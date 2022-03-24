@@ -1,0 +1,24 @@
+<ion-header class="header">
+  <ion-toolbar color="primary">
+    <div class="head">
+      <ion-buttons slot="end" >
+        <ion-button routerLink="/notes">
+          <ion-icon style="font-size:1.5rem;" slot="icon-only" name="chevron-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <h3>Note</h3>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+      <p style="text-align: end;padding:0.5rem;margin:0;">{{note.createdOn}}</p>
+      <ion-item class="title">
+        <h3>{{note.title}}</h3>
+      </ion-item>
+      <ion-item class="content">
+        <p>{{ note.content}}</p>
+      </ion-item>
+    </div>
+</ion-content>
